@@ -1,5 +1,7 @@
 package crop;
 import harvest.Harvest;
+import interfaces.InventoryItem;
+
 public abstract class Crop {
 
 	int stage;
@@ -35,4 +37,5 @@ public abstract class Crop {
 			return harvest;
 		} else throw new RuntimeException("Not Ripe");
 	}
+	
 }

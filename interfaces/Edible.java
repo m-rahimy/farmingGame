@@ -1,5 +1,7 @@
 package interfaces;
-import player.Energy;
+import player.*;
+import util.*;
+
 public interface Edible {
-	public Energy consume();
+	public Pair<Energy, Health> consume();
 }
