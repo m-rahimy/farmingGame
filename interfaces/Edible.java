@@ -1,5 +1,5 @@
 package interfaces;
-
+import player.Energy;
 public interface Edible {
-	public void consume();
+	public Energy consume();
 }

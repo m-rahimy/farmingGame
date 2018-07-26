@@ -1,6 +1,6 @@
 package interfaces;
-
+import player.Money;
 public interface Shippable {
-	public void ship();
+	public Money ship();
 }
 
