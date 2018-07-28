@@ -28,4 +28,8 @@ public abstract class Harvest implements InventoryItem {
 		return true;
 	}
 
+	@Override public String toString(){
+		return "Harvest { \"name\":" + name() + ", \"amount\":" +amount + "}";
+	}
+
 }

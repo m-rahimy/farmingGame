@@ -43,7 +43,7 @@ public class Player {
 		String data = "name: "+ name + ",\t" + money+ ",\t" + energy + ",\t"+ health;
 		String inv = ", \t items : ";
 		for(InventoryItem invItem :  inventory.getItemList()){
-			inv += invItem.name();
+			inv += invItem.toString();
 			inv += ", \t";
 		}
 		return data+inv;

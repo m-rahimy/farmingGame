@@ -25,5 +25,12 @@ class Main {
 		System.out.println("removed from inv . player is " + player);
 		player.devour(consumedData);	
 		System.out.println("consumed , player is " + player);	
+
+		harvest.Turnip t = new harvest.Turnip(2);
+		player.putToInventory(t);
+		harvest.Turnip t2 = new harvest.Turnip(2);
+		player.putToInventory(t2);
+		System.out.println("mock inv add, player is " + player);	
+		
 	}
 }
