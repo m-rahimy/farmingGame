@@ -12,4 +12,8 @@ public abstract class Seed implements InventoryItem {
 		System.out.println("inventory item test() called in Seed");
 	}
 
+	@Override public void addAmount(int am){
+		amount += am;
+	}
+
 }

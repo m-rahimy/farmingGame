@@ -28,4 +28,15 @@ public class Turnip extends Harvest implements Shippable, Edible {
 	@Override public int amount(){
 		return amount;
 	}
+
+	@Override public boolean equals(Object p){
+		if (!(p instanceof Turnip)){
+			return false;
+		}
+		return this.quality==((Turnip) p).quality;
+	}
+
+	@Override public int hashCode(){
+		return quality;
+	}	
 }

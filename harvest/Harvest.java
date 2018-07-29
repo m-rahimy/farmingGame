@@ -24,12 +24,16 @@ public abstract class Harvest implements InventoryItem {
 		amount++;
 	}
 
+	@Override public void addAmount(int am){
+		amount += am;
+	}
+
 	@Override public boolean canBeMultiple(){
 		return true;
 	}
 
 	@Override public String toString(){
-		return "Harvest { \"name\":" + name() + ", \"amount\":" +amount + "}";
+		return "Harvest { name: " + name() + ", amount: " +amount + ", quality: "+ quality + "}";
 	}
 
 }

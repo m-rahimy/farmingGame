@@ -3,14 +3,30 @@ import interfaces.InventoryItem;
 import java.util.*;
 
 public class Inventory {
-	private List<InventoryItem> inventoryItems = new ArrayList();
+	private Set<InventoryItem> inventoryItems = new HashSet();
 
 	public Inventory(){
 
 	}
 
 	public void add(InventoryItem item){
-		inventoryItems.add(item);
+		if (inventoryItems.contains(item)){
+			System.out.println("cintains!!!");
+			Iterator<InventoryItem> iter = inventoryItems.iterator();
+			while(iter.hasNext()){
+				InventoryItem ii = (InventoryItem) iter.next();
+				System.out.println(ii);
+				if(ii.equals(item)){
+					ii.addAmount(item.amount());
+					System.out.println("added amount: "+ item.amount());
+					System.out.println("new amount: "+ ii.amount());
+				}
+				
+			}
+			//inventoryItems.get(item).addAmount(item.amount());
+		}else{
+			inventoryItems.add(item);
+		}
 		System.out.println("added "+item+" to inv.");
 	}
 
@@ -22,7 +38,7 @@ public class Inventory {
 		return "inventory data = "+ 0;
 	}
 
-	public List<InventoryItem> getItemList(){
+	public Set<InventoryItem> getItemList(){
 		return inventoryItems ;
 	}
 }

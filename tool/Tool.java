@@ -11,4 +11,8 @@ public abstract class Tool implements InventoryItem {
 	@Override public int amount(){
 		return 1;
 	}
+
+	@Override public void addAmount(int am){
+		// not really needed for amount 
+	}
 }
