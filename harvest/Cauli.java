@@ -12,18 +12,18 @@ public class Cauli extends Harvest implements Shippable, Edible {
 	}
 
 	@Override public Pair<Energy, Health> consume(){
-		System.out.println("turnip consumed");
+		System.out.println(name() + " consumed");
 		return new Pair<Energy,Health>(new Energy(baseEnergy * quality), new Health(10*quality));
 	}
 
 	@Override public Money ship(){
-		System.out.println("turnip shipped");
+		System.out.println(name() + " shipped");
 		return new Money(basePrice * quality);
 	}
 
 	@Override public String name(){
 		return "Cauli";
-	}	
+	}
 
 	@Override public int amount(){
 		return amount;
