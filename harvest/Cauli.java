@@ -10,8 +10,4 @@ public class Cauli extends Harvest {
 	@Override public String name(){
 		return "Cauli";
 	}
-
-	@Override public int amount(){
-		return amount;
-	}
 }

@@ -2,7 +2,6 @@ package harvest;
 import interfaces.Shippable;
 import interfaces.Edible;
 import player.*;
-import player.Money;
 import util.Pair;
 public class WoodenTurnip extends Harvest {
 	public WoodenTurnip(int q){
@@ -24,15 +23,11 @@ public class WoodenTurnip extends Harvest {
 		return "Wooden Turnip";
 	}
 
-	@Override public int amount(){
-		return amount;
-	}
-
 	@Override public boolean equals(Object p){
-		if (!(p instanceof Turnip)){
+		if (!(p instanceof WoodenTurnip)) {
 			return false;
 		}
-		return this.quality==((Turnip) p).quality;
+		return this.quality==((WoodenTurnip) p).quality;
 	}
 
 	@Override public int hashCode(){

@@ -53,6 +53,10 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	@Override public boolean canBeShipped(){
 		return true;
 	}
+	
+	@Override public int amount(){
+		return amount;
+	}
 
 	@Override public String toString(){
 		return "Harvest { name: " + name() + ", amount: " +amount + ", quality: "+ quality + "}";
