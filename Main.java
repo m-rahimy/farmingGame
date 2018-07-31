@@ -32,6 +32,9 @@ class Main {
 		player.putToInventory(t2);
 		harvest.Turnip t3 = new harvest.Turnip(1);
 		player.putToInventory(t3);
+		harvest.Turnip t4 = new harvest.Turnip(2);
+		t4.increaseAmount();
+		player.putToInventory(t4);
 
 		System.out.println("mock inv add, player is " + player);	
 		
