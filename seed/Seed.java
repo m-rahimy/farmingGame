@@ -16,4 +16,12 @@ public abstract class Seed implements InventoryItem {
 		amount += am;
 	}
 
+	@Override public int amount (){
+		return amount;
+	}
+
+	@Override public boolean canBeMultiple(){
+		return true;
+	}
+
 }

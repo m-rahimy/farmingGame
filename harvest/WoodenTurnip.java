@@ -16,6 +16,10 @@ public class WoodenTurnip extends Harvest {
 		return null;
 	}
 
+	@Override public boolean canBeEaten(){
+		return false;
+	}
+
 	@Override public String name(){
 		return "Wooden Turnip";
 	}
