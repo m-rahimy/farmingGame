@@ -4,15 +4,20 @@ import interfaces.Edible;
 import player.*;
 import player.Money;
 import util.Pair;
-public class Turnip extends Harvest {
-	public Turnip(int q){
+public class WoodenTurnip extends Harvest {
+	public WoodenTurnip(int q){
 		super(q);
 		basePrice = 20;
-		baseEnergy = 15;
+		baseEnergy = 0;
+	}
+
+	@Override public Pair<Energy, Health> consume(){
+		System.out.println("you cannot eat a "+ name() +" child!!!");
+		return null;
 	}
 
 	@Override public String name(){
-		return "Turnip";
+		return "Wooden Turnip";
 	}
 
 	@Override public int amount(){
