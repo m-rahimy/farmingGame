@@ -1,9 +1,12 @@
 package harvest;
 import player.*;
+import interfaces.*;
 import util.Pair;
 public class WoodenCauli extends Harvest {
+	private Edible edibality;
 	public WoodenCauli(int q){
 		super(q);
+		this.edibality = new UnconsumableHarvest(q);
 		basePrice = 30;
 		baseEnergy = 25;
 	}
@@ -13,12 +16,10 @@ public class WoodenCauli extends Harvest {
 	}
 
 	@Override public Pair<Energy, Health> consume(){
-		System.out.println("you cannot eat a "+ name() +" child!!!");
-		return null;
+		return edibality.consume();
 	}
 
-
 	@Override public boolean canBeEaten(){
-		return false;
+		return edibality.canBeEaten();
 	}
 }

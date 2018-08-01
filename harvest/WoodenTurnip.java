@@ -4,19 +4,20 @@ import interfaces.Edible;
 import player.*;
 import util.Pair;
 public class WoodenTurnip extends Harvest {
+	public Edible edibality;
 	public WoodenTurnip(int q){
 		super(q);
+		edibality = new UnconsumableHarvest(q);
 		basePrice = 20;
 		baseEnergy = 0;
 	}
 
 	@Override public Pair<Energy, Health> consume(){
-		System.out.println("you cannot eat a "+ name() +" child!!!");
-		return null;
+		return edibality.consume();
 	}
 
 	@Override public boolean canBeEaten(){
-		return false;
+		return edibality.canBeEaten();
 	}
 
 	@Override public String name(){
