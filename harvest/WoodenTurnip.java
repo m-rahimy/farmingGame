@@ -3,11 +3,13 @@ import interfaces.Shippable;
 import interfaces.Edible;
 import player.*;
 import util.Pair;
+import composite.*;
+
 public class WoodenTurnip extends Harvest {
-	public Edible edibality;
+
 	public WoodenTurnip(int q){
 		super(q);
-		edibality = new UnconsumableHarvest(q);
+		edibality = new Unconsumable();
 		basePrice = 20;
 		baseEnergy = 0;
 	}
@@ -29,9 +31,5 @@ public class WoodenTurnip extends Harvest {
 			return false;
 		}
 		return this.quality==((WoodenTurnip) p).quality;
-	}
-
-	@Override public int hashCode(){
-		return quality;
 	}
 }

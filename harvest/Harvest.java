@@ -12,6 +12,8 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	int basePrice = 10;
 	int amount = 1;
 
+	protected Edible edibality;
+
 	public Harvest(int quality){
 		this.quality = quality;
 	}
@@ -61,4 +63,6 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	@Override public String toString(){
 		return "Harvest { name: " + name() + ", amount: " +amount + ", quality: "+ quality + "}";
 	}
+
+	@Override public int hashCode() { return quality; }
 }

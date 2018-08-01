@@ -36,6 +36,10 @@ class Main {
 		t4.increaseAmount();
 		player.putToInventory(t4);
 
+		player.putToInventory(new harvest.WoodenCauli(1));
+		player.putToInventory(new harvest.WoodenCauli(1));
+		player.putToInventory(new harvest.WoodenCauli(1));
+
 		System.out.println("mock inv add, player is " + player);	
 		
 	}

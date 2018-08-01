@@ -25,8 +25,4 @@ public class Turnip extends Harvest {
 		}
 		return this.quality==((Turnip) p).quality;
 	}
-
-	@Override public int hashCode(){
-		return quality;
-	}
 }
