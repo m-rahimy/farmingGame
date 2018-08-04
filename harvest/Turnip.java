@@ -1,28 +1,27 @@
 package harvest;
+import interfaces.InventoryItem;
 import interfaces.Shippable;
 import interfaces.Edible;
 import player.*;
-import player.Money;
 import util.Pair;
+
 public class Turnip extends Harvest {
-	public Turnip(int q){
-		super(q);
-		basePrice = 20;
-		baseEnergy = 15;
+	
+	public Turnip(int quality){
+		super("Turnip" , quality);
 	}
 
-	@Override public String name(){
-		return "Turnip";
-	}
-
-	@Override public int amount(){
-		return amount;
-	}
+	@Override public int hashCode() { return quality; }
 
 	@Override public boolean equals(Object p){
-		if (!(p instanceof Turnip)){
+		if (!(p instanceof Turnip)) {
 			return false;
 		}
-		return this.quality==((Turnip) p).quality;
+		if(!  ((Harvest)p).name.equals(this.name)    ){
+			return false;
+		}
+
+		return this.quality==((Harvest) p).quality;
 	}
+
 }

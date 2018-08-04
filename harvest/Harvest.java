@@ -11,11 +11,17 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	int baseHealth = 6;
 	int basePrice = 10;
 	int amount = 1;
+	String name;
 
 	protected Edible edibality;
 
-	public Harvest(int quality){
+	public Harvest(String name, int quality){
 		this.quality = quality;
+		this.name = name;
+	}
+
+	@Override public String name(){
+		return name;
 	}
 
 	public void setQuality(int q){
@@ -29,7 +35,7 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	@Override public boolean canBeEaten(){
 		return true;
 	}
-	
+
 	@Override public Pair<Energy, Health> consume(){
 		System.out.println(name() + " consumed");
 		return new Pair<Energy,Health>(new Energy(baseEnergy * quality), new Health(10*quality));
@@ -55,7 +61,7 @@ public abstract class Harvest implements InventoryItem, Shippable, Edible {
 	@Override public boolean canBeShipped(){
 		return true;
 	}
-	
+
 	@Override public int amount(){
 		return amount;
 	}
